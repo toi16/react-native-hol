@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import firebase from 'firebase';
 import { TabNavigator } from 'react-navigation';
 import Icon from 'react-native-vector-icons/FontAwesome';
-import Config from './Config/api';
 import { store } from './Config/store';
 
 import AddScreen from './Screens/AddScreen';
@@ -15,7 +14,16 @@ import SettingsScreen from './Screens/SettingsScreen';
 
 class App extends Component {
     componentWillMount() {
-        firebase.initializeApp(Config);
+        const config = {
+            apiKey: 'AIzaSyDxKpOMDZPumQWnNSUA6_WRaKcQHHnhF4g',
+            authDomain: 'manager-7ff67.firebaseapp.com',
+            databaseURL: 'https://manager-7ff67.firebaseio.com',
+            projectId: 'manager-7ff67',
+            storageBucket: 'manager-7ff67.appspot.com',
+            messagingSenderId: '779606209015'
+        };
+
+        firebase.initializeApp(config);
     };
 
 
